@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<AnchorPane prefHeight="591.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.UI.AppWindowContoller">
+   <children>
+      <TextArea fx:id="txtJawnyArea" layoutX="58.0" layoutY="242.0" prefHeight="200.0" prefWidth="200.0" text="Podaj tekst jawny" wrapText="true"/>
+      <TextArea fx:id="szyfrogramArea" layoutX="439.0" layoutY="242.0" prefHeight="200.0" prefWidth="200.0" text="Podaj szyfrogram" wrapText="true"/>
+      <TextField fx:id="key1txtField" layoutX="58.0" layoutY="105.0" />
+      <TextField fx:id="key2txtField" layoutX="293.0" layoutY="105.0" />
+      <TextField fx:id="key3txtField" layoutX="512.0" layoutY="105.0" />
+      <Label layoutX="72.0" layoutY="88.0" text="Klucz 1" />
+      <Label layoutX="311.0" layoutY="88.0" text="Klucz 2" />
+      <Label layoutX="525.0" layoutY="88.0" text="Klucz 3" />
+      <Button fx:id="szyfrujButton" layoutX="323.0" layoutY="270.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="86.0" text="Szyfruj" onAction="#Encrypt"/>
+      <Button fx:id="deszyfrujButton" layoutX="323.0" layoutY="349.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="86.0" text="Deszyfruj" onAction="#Decrypt"/>
+      <Label layoutX="77.0" layoutY="179.0" text="Otwórz plik z tekstem jawnym" />
+      <Button fx:id="otworzJawnyButton" layoutX="232.0" layoutY="197.0" mnemonicParsing="false" text="Otwórz" onAction="#chooseFileTxt"/>
+      <TextField fx:id="otworzJawnyTxtField" layoutX="72.0" layoutY="197.0" />
+      <TextField fx:id="otworzSzyfrogramTxtField" layoutX="451.0" layoutY="197.0" />
+      <Label layoutX="463.0" layoutY="179.0" text="Otwórz plik z szyfrogramem" />
+      <Button fx:id="otworzSzyfrogramButton" layoutX="613.0" layoutY="197.0" mnemonicParsing="false" text="Otwórz" onAction="#chooseFileCypher"/>
+      <Button fx:id="zapiszJawnyButton" layoutX="236.0" layoutY="521.0" mnemonicParsing="false" text="Zapisz" onAction="#SaveFileTxt" />
+      <Button fx:id="zapiszSzyfrogramButton" layoutX="615.0" layoutY="521.0" mnemonicParsing="false" text="Zapisz" onAction="#SaveFileCypher"/>
+      <Label layoutX="77.0" layoutY="504.0" text="Zapisz plik z tekstem jawnym" />
+      <Label layoutX="463.0" layoutY="504.0" text="Zapisz plik z szyfrogramem" />
+      <TextField fx:id="zapiszJawnyTxtField" layoutX="73.0" layoutY="521.0" />
+      <TextField fx:id="zapiszSzyfrogramTxtField" layoutX="452.0" layoutY="522.0" />
+      <Button fx:id="generujKluczeButton" layoutX="102.0" layoutY="43.0" mnemonicParsing="false" text="Generuj klucze" onAction="#GenerateKeys"/>
+      <ComboBox fx:id="choiceComboBox" layoutX="274.0" layoutY="450.0" prefWidth="150.0">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Plik" />
+               <String fx:value="Okno"/>
+            </FXCollections>
+         </items>
+         <value>
+            <String fx:value="Okno" />
+         </value>
+      </ComboBox>
+   </children>
+</AnchorPane>
